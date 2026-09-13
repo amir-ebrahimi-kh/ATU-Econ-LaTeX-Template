@@ -25,7 +25,7 @@
 \RequirePackage{calc}
 
 % تنظیمات حاشیه صفحات (Margines)
-% نکته: حاشیه راست ۴ سانت برای صحافی (شیرازه) تنظیم شده است. 
+% نکته: حاشیه راست ۴ سانت برای صحافی (شیرازه) تنظیم شده است.
 % اگر می‌خواهید برای مانیتور کاملاً وسط‌چین باشد، اعداد را به صورت (left=3cm, right=3cm) تغییر دهید.
 \RequirePackage[top=3cm, bottom=2.5cm, left=2.5cm, right=4cm]{geometry}
 
@@ -36,7 +36,7 @@
 \newcolumntype{C}[1]{>{\raggedleft\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\raggedleft\centering\arraybackslash}m{#1}}
-\RequirePackage{multicol} 
+\RequirePackage{multicol}
 \RequirePackage{fancyhdr}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{zref-perpage}
@@ -102,7 +102,7 @@
 
 \begin{titlepage}
 \begin{center}
-به نام خداوند بخشنده مهربان 
+به نام خداوند بخشنده مهربان
 \\[1em]
 \includegraphics[width=2.8cm]{ATU_logo.eps}
 \\[1em]
@@ -139,7 +139,7 @@
 استاد راهنما:\\
 \@firstsupervisor}
 \else
-{\large\bfseries 
+{\large\bfseries
 استادان راهنما:\\
 \@firstsupervisor{} و \@secondsupervisor}
 \fi\fi}
@@ -172,7 +172,7 @@
 \setcounter{page}{1}
 \pagestyle{plain}
 \newpage
-{\large \bfseries \noindent 
+{\large \bfseries \noindent
 \begin{center}\includegraphics[scale=.30]{ATU_logo.eps}
 \end{center}\par
 {\settextfont[Scale=1.3]{B Nazanin}
@@ -190,7 +190,7 @@
 \item اصل رازداری: تعهد به صیانت از اسرار و اطلاعات محرمانه افراد، سازمان هاو کشور و کلیه افراد و نهاد‌های مرتبط با تحقیق،
 \item اصل احترام: تعهد به رعایت حریم‌ها و حرمت‌ها در انجام تحقیقات و رعایت جانب نقد و خودداری از هرگونه حرمت شکنی،
 \item اصل ترویج: تعهد به رواج دانش و اشاعه نتایج تحقیقات و انتقال آن به همکاران علمی و دانشجویان به غیر از مواردی که منع قانونی دارد،
-\item اصل برائت: التزام به برائت جوئی از هرگونه رفتار غیر حرفه ای و اعلام موضع نسبت به کسانی که حوزه علم و پژوهش را به شائبه‌های غیر علمی می آلایند.                                         
+\item اصل برائت: التزام به برائت جوئی از هرگونه رفتار غیر حرفه ای و اعلام موضع نسبت به کسانی که حوزه علم و پژوهش را به شائبه‌های غیر علمی می آلایند.
 \end{enumerate}
 \begin{center}
 \@name \ \@surname
@@ -204,7 +204,7 @@
 \newpage
 \noindent
 \pagestyle{plain}
-{\large \bfseries \noindent 
+{\large \bfseries \noindent
 \begin{center}\includegraphics[scale=.30]{ATU_logo.eps}
 \end{center}\par
 {\settextfont[Scale=1.3]{B Nazanin}
@@ -212,16 +212,16 @@
 \textbf{تعهدنامه اصالت اثر}
 \end{center}
 اینجانب
-\ \@name \ \@surname \ 
-دانش آموخته مقطع تحصیلی 
+\ \@name \ \@surname \
+دانش آموخته مقطع تحصیلی
 \if@mscthesis کارشناسی ارشد \else دکتری \fi
-در رشته 
+در رشته
 \ \@subject \
-که در تاریخ 
-\ifx\@defensedate\undefined\else\@defensedate\fi \ 
-از 
+که در تاریخ
+\ifx\@defensedate\undefined\else\@defensedate\fi \
+از
 \if@mscthesis پایان نامه \else رساله \fi
-خود تحت عنوان 
+خود تحت عنوان
 «{\@title}»
 با کسب نمره
 \ifx\@grade\undefined
@@ -256,12 +256,12 @@
 \vspace{1pt}
 \par
 \vspace{-2mm}
-{\small 
+{\small
 مدیریت تحصیلات تکمیلی
 }
 &
 \baselineskip=1cm
-{\large \bfseries 
+{\large \bfseries
 تاییدیه هیأت داوران جلسه دفاع از پایان نامه ویژه کتابخانه مرکزی\par
 دوره
 \if@mscthesis کارشناسی ارشد \else دکتری \fi
@@ -270,43 +270,43 @@
 \\ \hline
 \multicolumn{3}{|p{14cm}|}{
 \baselineskip=1cm
-جلسه دفاعیه 
+جلسه دفاعیه
 \if@mscthesis پایان‌نامه \else رساله \fi
-تحصیلی آقای/خانم:          
+تحصیلی آقای/خانم:
 \@name \  \@surname
 \hfill
  دانشجوی
 \if@mscthesis کارشناسی ارشد \else دکتری \fi
 \par
- رشتـه/گرایش:       
+ رشتـه/گرایش:
 \@subject/\@field
-\par                                        
-تحت عنوان:        
+\par
+تحت عنوان:
 \@title
-\par                                                                                                                                                                          
-و تعداد واحد:   
+\par
+و تعداد واحد:
 \hskip 1ex
 \ifx\@credit\undefined \else \@credit \fi
 \hskip 1ex
-در تاریخ 
+در تاریخ
 \ifx\@defensedate\undefined \else \@defensedate\ \fi \
  با حضور اعضای هيأت داوران (به شرح ذیل) تشكيل گرديد.
 \par
-پس از ارزيابی توسط هيأت داوران، 
+پس از ارزيابی توسط هيأت داوران،
 \if@mscthesis پايان‌نامه \else رساله \fi
-با نمره به عدد 
+با نمره به عدد
 \ifx\@grade\undefined
 \hphantom{    }
 \else
 \@grade\
 \fi
-به حروف    
+به حروف
 \ifx\@letgrade\undefined
 \hphantom{            }
 \else
 \@letgrade\
-\fi                        
-و  درجه      
+\fi
+و  درجه
 \ifx\@degree\undefined
 \hphantom{    }
 \else
@@ -319,10 +319,10 @@
 \multicolumn{1}{c}{\underline{عنوان}} & \underline{نام و نام خانوادگی} & \underline{امضاء}\\[1em]
 
 استاد راهنما:
-\if@mscthesis\else 
+\if@mscthesis\else
   \ifx\@secondsupervisor\undefined\else\newline\hphantom{استاد راهنما:}ب:\fi
 \fi
-& 
+&
 \ifx\@firstsupervisor\undefined\else
   \if@mscthesis \@firstsupervisor
   \else الف: \@firstsupervisor \fi
@@ -343,25 +343,25 @@
 & \\[2em]
 
 % ------------------- Referee Logic -------------------
-\if@mscthesis 
-  داور: 
+\if@mscthesis
+  داور:
   &
   \ifx\@firstinternalreferee\undefined\else\@firstinternalreferee\fi
   & \\[2em]
 \else
-  داور داخلی: 
+  داور داخلی:
   \ifx\@secondinternalreferee\undefined\else\newline\hphantom{داور داخلی:}ب:\fi
   &
   \ifx\@firstinternalreferee\undefined\else الف: \@firstinternalreferee\fi
   \ifx\@secondinternalreferee\undefined\else\par\@secondinternalreferee\fi
-  & \\[2em] 
-  
-  داور خارجی: 
+  & \\[2em]
+
+  داور خارجی:
   \ifx\@secondexternalreferee\undefined\else\newline\hphantom{داور خارجی:}ب:\fi
-  & 
+  &
   \ifx\@firstexternalreferee\undefined\else الف: \@firstexternalreferee\fi
   \ifx\@secondexternalreferee\undefined\else\par\@secondexternalreferee\fi
-  & \\[2em] 
+  & \\[2em]
 \fi
 % ------------------------------------------------------
 
@@ -376,7 +376,7 @@
 امضاء:
 }
 \\[5em]
-\end{tabular} 
+\end{tabular}
 }
 \\ \hline
 \end{tabular}
@@ -471,7 +471,7 @@ Advisors:
 \vskip 5mm
 \par
 \vskip 1cm
-{\large\bfseries Tehran 
+{\large\bfseries Tehran
 \\\ifx\@latinthesisdate\undefined\else\@latinthesisdate\fi}
 \par
 \vskip 1cm
@@ -500,7 +500,7 @@ Advisors:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-\fancyhf{} 
+\fancyhf{}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -529,7 +529,7 @@ Advisors:
     \Huge \bfseries  #1\par\nobreak
     \vskip 40\p@
     \thispagestyle{empty}
-  }}  
+  }}
   \flushbottom
 }
 
@@ -552,7 +552,7 @@ Advisors:
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                      {-1.4cm \@plus -0ex \@minus -0ex}%
                                    {1cm \@plus0ex}%
-                                     {\normalfont\normalsize\bfseries}}  
+                                     {\normalfont\normalsize\bfseries}}
 
 
 \def\bflabel#1{{\textsf{#1}\hfill}}
@@ -571,7 +571,7 @@ Advisors:
           \acfsfont{\acsfont{\AC@acs{#1}}}%
         }}
  \makeatother
- 
+
 \makeatletter
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
