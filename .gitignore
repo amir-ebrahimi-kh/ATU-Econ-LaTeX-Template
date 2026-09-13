@@ -1,0 +1,22 @@
+# LaTeX compilation files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdf
+
+# OS generated files
+.DS_Store
+Thumbs.db

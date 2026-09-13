@@ -1,0 +1,81 @@
+% !TeX program = xelatex
+
+% --- پچ ترمیمی برای رفع خطای کلاس دانشگاه علامه (@verridelabel) ---
+\makeatletter
+\newcommand*\@verridelabel[1]{}
+\makeatother
+
+\documentclass[msc,withpage,printonlyused]{allameh-thesis}
+
+% --- بسته‌های تکمیلی ---
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+
+% --- تنظیمات زی‌پرشین ---
+\usepackage{xepersian}
+\settextfont[Scale=1.3]{B Nazanin}
+\defpersianfont\minutesfont[Scale=1.2]{B Nazanin}
+\setlatintextfont{Times New Roman} 
+% فونت اعداد به XB Niloofar تغییر یافت تا از خطای عدم وجود ممیز و درصد جلوگیری شود
+\setdigitfont[Scale=1.1]{XB Niloofar} 
+
+\SepMark{-}
+\def\addsymbol #1:#2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\} 
+\def\symboldisplay#1{\label{#1}} 
+\newtheorem{observation}{مشاهده}[section]
+
+% پچ برای رفع خطای UseMathForPositioningText در نسخه‌های جدید bidi
+\makeatletter
+\providecommand\UseMathForPositioningText{}
+\makeatother
+
+\begin{document}
+\baselineskip=1cm
+
+% مشخصات پایان‌نامه و ایجاد صفحات اولیه فرم
+\input{fainfo}
+\thispagestyle{plain}
+
+% چکیده فارسی
+\include{faabstract}
+
+% فهرست‌ها
+\tableofcontents
+\listoftables
+\pagenumbering{alph}
+\listoffigures
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% فصل‌ها
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+
+% پیوست‌ها
+\appendix
+\include{appendix1}
+\include{symbols}
+\include{dicfa2en}
+\include{dicen2fa}
+
+% مآخذ و منابع
+\bibliographystyle{acm-fa}
+\bibliography{MyReferences}
+\printindex
+
+% صفحات انگلیسی پایان‌نامه
+\input{eninfo}
+
+\end{document}
