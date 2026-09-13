@@ -7,9 +7,9 @@
 
 ## Introduction
 
-Welcome to the **heavily debugged, mathematically optimized, and binding-ready LaTeX template** tailored specifically for the **Economics Faculty at Allameh Tabataba'i University (ATU)**.
+Welcome to the **debugged, optimized, and binding-ready LaTeX template** tailored specifically for the **Economics Faculty at Allameh Tabataba'i University (ATU)**.
 
-This repository provides an absolute gold standard for ATU students. It significantly overhauls the legacy `allameh-thesis.cls` file, resolving long-standing bugs and ensuring a smooth, crash-free compilation experience for both Master's and Ph.D. students.
+This repository provides a gold standard for ATU students. It significantly overhauls the legacy `allameh-thesis.cls` file, resolving long-standing bugs and ensuring a smooth, crash-free compilation experience for both Master's and Ph.D. students.
 
 ## Key Features
 
@@ -73,7 +73,7 @@ Follow these steps to get your thesis up and running:
 
 ## Author & Credits
 
-This template overhaul, legacy bug squashing, and math optimization were heavily developed and credited to **Amirhossein Ebrahimikhorramabadi** (2026).
+This template overhaul, legacy bug squashing, and optimization were developed and credited to **Amirhossein Ebrahimikhorramabadi** (2026).
 
 ## Contributing & Issues
 
