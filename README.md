@@ -1,81 +1,73 @@
-# Allameh Tabataba'i University Thesis Template - Economics Faculty Edition
+# The Boyce Effect in MENA Rentier Economies: A Data Pipeline
 
-![LaTeX](https://img.shields.io/badge/LaTeX-47A141?style=for-the-badge&logo=latex&logoColor=white)
-![XeTeX](https://img.shields.io/badge/XeTeX-122B42?style=for-the-badge&logo=latex&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Stata](https://img.shields.io/badge/Stata-1A5F7A?style=for-the-badge&logo=stata&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
 ![Open Source](https://img.shields.io/badge/Open_Source-Yes-brightgreen?style=for-the-badge)
 
-## Introduction
+## Abstract
 
-Welcome to the **debugged, optimized, and binding-ready LaTeX template** tailored specifically for the **Economics Faculty at Allameh Tabataba'i University (ATU)**.
+This repository provides the complete, fully operational data pipeline and econometrics estimation scripts supporting the paper on the "Boyce effect" in Middle Eastern and North African (MENA) rentier economies. The paper executes a dynamic panel threshold regression and bias-corrected Least Squares Dummy Variable (LSDVC) estimations to rigorously test the impact of natural resource rents and capital flight on environmental degradation and economic growth, utilizing comprehensive data from the World Bank and the World Inequality Database (WID).
 
-This repository provides a gold standard for ATU students. It significantly overhauls the legacy `allameh-thesis.cls` file, resolving long-standing bugs and ensuring a smooth, crash-free compilation experience for both Master's and Ph.D. students.
+## Reproduction Guide
 
-## Key Features
+The pipeline consists of 8 precisely calibrated scripts (Python and Stata) designed to process the raw datasets, execute the necessary mathematical transformations, and reproduce the exact tables and figures presented in the finalized manuscript.
 
-*   **Smart MSc/PhD Toggle:** Use `\documentclass[msc]{allameh-thesis}` to dynamically switch the title page and defense form between Master's and Ph.D. formats.
-*   **Legacy Bug Fixes:** Fixed critical legacy class bugs, including `\@verridelabel` and external referee compilation crashes. Implemented critical safe-checks (`\ifx...\undefined`) for defense committee variables.
-*   **Math Optimization:** Proper math environments for negative/decimal numbers (utilizing XB Niloofar digit font to prevent missing decimal/percentage errors).
-*   **Binding-Ready Margins:** Pre-configured margins (Right: 4cm, Left: 2.5cm) perfectly optimized for physical binding and spine (شیرازه).
+**Note on Modifications:** To ensure exact reproducibility and to match the finalized manuscript for Ecological Economics, **do not** alter the execution logic, mathematical transformations, random seeds, variable names, or econometric specifications in any of the provided scripts.
 
-## Prerequisites
+### Prerequisites
 
-To compile this template, you must have the following installed:
+*   Python 3.9+
+*   Stata 16+
+*   Required Python packages: `pandas`, `numpy`, `statsmodels`, `matplotlib`, `seaborn` (see `requirements.txt` if available)
 
-*   **TeX Distribution:** TeX Live (recommended) or MiKTeX.
-*   **Packages:** Ensure the `xepersian` package is installed.
-*   **Compilation Engine:** The compilation engine **MUST** be **XeLaTeX**.
-
-## Quick Start Guide
-
-Follow these steps to get your thesis up and running:
+### Step-by-Step Execution
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/atu-economics-thesis.git
-    cd atu-economics-thesis
+    git clone https://github.com/your-username/boyce-effect-mena.git
+    cd boyce-effect-mena
     ```
-    *(Replace with actual repository URL once published)*
 
-2.  **Fill in Personal Details:**
-    *   Open `fainfo.tex` and fill in your Persian details (title, name, supervisors, referees, etc.).
-    *   Open `eninfo.tex` and fill in your English details.
-    *   **⚠️ IMPORTANT:** Do NOT delete placeholder variables or commented-out referee/supervisor lines (e.g., `\firstexternalreferee`). They are required for dynamic table generation. If a field doesn't apply (like an external referee for a Master's student), leave it as `--` or follow the comments in the file.
-
-3.  **Write Your Content:**
-    Add your text to `chapter1.tex`, `chapter2.tex`, etc.
-
-4.  **Compile:**
-    Compile the main file using XeLaTeX:
+2.  **Run Python Data Pre-processing Scripts (Scripts 1-4):**
+    Ensure your virtual environment is active and run the Python scripts in numerical order to clean and merge the World Bank and WID data.
     ```bash
-    xelatex thesis.tex
+    python 01_data_cleaning.py
+    python 02_variable_transformation.py
+    python 03_merge_datasets.py
+    python 04_descriptive_statistics.py
     ```
-    *(Note: You may need to compile multiple times (e.g., `xelatex -> bibtex -> xelatex -> xelatex`) to generate correct bibliography and table of contents).*
+
+3.  **Run Stata Econometrics Scripts (Scripts 5-8):**
+    Open Stata, navigate to the repository directory, and execute the `.do` files in numerical order. These scripts perform the core econometric estimations, including the dynamic panel threshold and LSDVC models.
+    ```stata
+    do 05_panel_unit_root_tests.do
+    do 06_lsdvc_estimations.do
+    do 07_threshold_regression.do
+    do 08_robustness_checks.do
+    ```
+
+4.  **Outputs:**
+    All generated figures, tables, and logs will be saved automatically to their respective output directories (`figures/`, `tables/`, `logs/`).
 
 ## Repository Structure
 
 ```text
-├── allameh-thesis.cls    # The core LaTeX class file (heavily modified & debugged)
-├── thesis.tex            # Main LaTeX file to compile
-├── fainfo.tex            # Persian thesis information (name, title, committee)
-├── eninfo.tex            # English thesis information
-├── faabstract.tex        # Persian abstract
-├── chapter1-6.tex        # Chapter files
-├── appendix1.tex         # Appendix file
-├── symbols.tex           # List of symbols
-├── dicfa2en.tex          # Persian to English dictionary
-├── dicen2fa.tex          # English to Persian dictionary
-├── MyReferences.bib      # Bibliography file (BibTeX)
-├── figures/              # Directory for images and ATU logo
-├── LICENSE               # MIT License file
-└── README.md             # This file
+├── 01_data_cleaning.py              # Initial World Bank & WID data cleaning
+├── 02_variable_transformation.py    # Log transformations and variable scaling
+├── 03_merge_datasets.py             # Merging and panel data structuring
+├── 04_descriptive_statistics.py     # Generating summary statistics tables
+├── 05_panel_unit_root_tests.do      # Stata script: Stationarity tests
+├── 06_lsdvc_estimations.do          # Stata script: Bias-corrected LSDVC models
+├── 07_threshold_regression.do       # Stata script: Dynamic panel threshold models
+├── 08_robustness_checks.do          # Stata script: Alternative specifications & tests
+├── data/                            # Raw data files (World Bank, WID)
+├── figures/                         # Generated plots and graphs
+├── tables/                          # Output regression tables
+├── logs/                            # Stata log files
+├── .gitignore                       # Git ignore file
+├── LICENSE                          # MIT License file
+└── README.md                        # This documentation
 ```
 
-## Author & Credits
-
-This template overhaul, legacy bug squashing, and optimization were developed and credited to **Amirhossein Ebrahimikhorramabadi** (2026).
-
-## Contributing & Issues
-
-Found a bug? Want to add a feature?
-Students and contributors are highly encouraged to open an issue or submit a pull request! Let's keep this template the gold standard for all ATU Economics students.
+*(Note: The actual scripts are to be added to this repository by the maintainers.)*
